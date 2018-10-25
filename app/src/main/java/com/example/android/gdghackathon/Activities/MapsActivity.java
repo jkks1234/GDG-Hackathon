@@ -93,8 +93,8 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                         try {
                             JSONArray jsonArray = response.getJSONArray("routes").getJSONObject(0).getJSONArray("legs").getJSONObject(0).getJSONArray("steps");
                             for (int i=0;i<jsonArray.length();++i){
-                                Double lat = jsonArray.getJSONObject(i).getJSONObject("start_location").getDouble("lat");
-                                Double lng = jsonArray.getJSONObject(i).getJSONObject("start_location").getDouble("lng");
+                                Double lat = jsonArray.getJSONObject(i).getJSONObject("startlocation").getDouble("lat");
+                                Double lng = jsonArray.getJSONObject(i).getJSONObject("startlocation").getDouble("lng");
                                 LatLng point = new LatLng(lat,lng);
                                 Log.d("12341234", "onResponse: "+point);
                                 linePlaces.add(point);
